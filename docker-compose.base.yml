@@ -1,0 +1,19 @@
+version: "3"
+services:
+  node-server-container:
+    build: .
+    env_file: 
+      - .env
+    ports:
+      - 3000:3000
+    depends_on:
+      - mongo-db
+  mongo-db:
+    volumes:
+      - mongo-db:/data/db:rw
+    image: mongo
+    env_file: 
+      - .env
+    restart: always
+volumes:
+  mongo-db:

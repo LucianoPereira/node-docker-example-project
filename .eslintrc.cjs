@@ -30,6 +30,8 @@ module.exports = {
     'prefer-destructuring': 'off',
     'quote-props': ['error', 'consistent'],
     'id-length': ['error', { max: 40, min: 1 }],
+    'import/prefer-default-export': 0,
+    'import/extensions': 0,
     'space-before-function-paren': 'off',
     'new-cap': 'off',
     'semi': 'off',

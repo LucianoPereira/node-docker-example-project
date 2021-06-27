@@ -1,7 +1,12 @@
 FROM node:16
 WORKDIR /app
 COPY package.json .
-RUN yarn
+ARG NODE_ENV
+RUN if [ "$NODE_ENV" = "production" ]; \
+      then yarn install --production; \
+      else yarn; \
+      fi
 COPY . .
-EXPOSE 3000
-CMD ["node", "index.js"]
+ENV PORT 3000
+EXPOSE $PORT
+CMD ["yarn", "dev"]

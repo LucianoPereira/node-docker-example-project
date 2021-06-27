@@ -5,7 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "node index.js",
+    "start": "node index.js",
+    "dev": "nodemon -L index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint --cache \"*.js\""
   },
@@ -13,11 +14,14 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
+    "argon2": "^0.28.2",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.15"
   },
   "devDependencies": {
     "eslint": "^7.28.0",
     "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-plugin-import": "^2.23.4"
+    "eslint-plugin-import": "^2.23.4",
+    "nodemon": "^2.0.7"
   }
 }
