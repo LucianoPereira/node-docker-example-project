@@ -25,7 +25,6 @@ git clone https://github.com/LucianoPereira/node-docker-example-project.git
 ```
 - Install dependencies
 ```
-cd docker-node-express
 yarn
 ```
 
