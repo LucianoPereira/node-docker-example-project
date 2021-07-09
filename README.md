@@ -21,7 +21,7 @@ You can use the .env.example template file to define the environment variables n
 # Getting started
 - Clone the repository
 ```
-git clone  <repo-url>
+git clone https://github.com/LucianoPereira/node-docker-example-project.git
 ```
 - Install dependencies
 ```
