@@ -1,5 +1,6 @@
 import express from 'express';
 
+import { protect } from '../middleware/authMiddleware.js';
 import {
   getAllPosts,
   createPost,
@@ -10,8 +11,8 @@ import {
 
 const router = express.Router();
 
-router.route('/').get(getAllPosts).post(createPost);
+router.route('/').get(getAllPosts).post(protect, createPost);
 
-router.route('/:id').get(getOnePost).patch(updatePost).delete(deletePost);
+router.route('/:id').get(getOnePost).patch(protect, updatePost).delete(protect, deletePost);
 
 export const postRouter = router;
