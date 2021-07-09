@@ -6,10 +6,10 @@ import connectRedis from 'connect-redis';
 import cors from 'cors';
 
 import {
-  MONGO_IP,
-  MONGO_PASSWORD,
-  MONGO_PORT,
-  MONGO_USER,
+  DB_IP,
+  DB_PASSWORD,
+  DB_PORT,
+  DB_USER,
   NODE_PORT,
   REDIS_PORT,
   REDIS_URL,
@@ -19,7 +19,7 @@ import { postRouter } from './src/routes/postRoutes.js';
 import { userRouter } from './src/routes/userRoutes.js';
 
 const App = async () => {
-  const mongoUrl = `mongodb://${MONGO_USER}:${MONGO_PASSWORD}@${MONGO_IP}:${MONGO_PORT}/?authSource=admin`;
+  const mongoUrl = `mongodb://${DB_USER}:${DB_PASSWORD}@${DB_IP}:${DB_PORT}/?authSource=admin`;
 
   await mongoose.connect(mongoUrl);
 
@@ -45,7 +45,7 @@ const App = async () => {
       resave: false,
       cookie: {
         httpOnly: true,
-        maxAge: 30000,
+        maxAge: 1000 * 60 * 60 * 24 * 7,
         secure: false,
         signed: false,
       },
